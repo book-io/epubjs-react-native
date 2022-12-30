@@ -13,10 +13,12 @@ import { OpeningBook } from './utils/OpeningBook';
 
 export type ViewProps = Omit<ReaderProps, 'src' | 'fileSystem'> & {
   template: string;
+  baseUrl: string | null;
 };
 
 export function View({
   template,
+  baseUrl,
   onStarted = () => {},
   onReady = () => {},
   onDisplayError = () => {},
@@ -254,9 +256,10 @@ export function View({
             <TouchableWithoutFeedback onPress={handleDoublePress}>
               <WebView
                 ref={book}
-                source={{ html: template, baseUrl: 'file:///' }}
+                source={{ html: template, baseUrl: baseUrl || 'file:///' }}
                 showsVerticalScrollIndicator={false}
                 javaScriptEnabled
+                sharedCookiesEnabled
                 originWhitelist={['*']}
                 scrollEnabled={false}
                 mixedContentMode="compatibility"

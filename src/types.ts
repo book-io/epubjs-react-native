@@ -96,6 +96,7 @@ export interface ReaderProps {
    */
   src: string;
   bookOptions?: BookOptions,
+  baseUrl: string | null,
   /**
    * @param {ePubCfi[]} locations
    * @example

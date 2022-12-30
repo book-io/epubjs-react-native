@@ -13,6 +13,7 @@ import { SourceType } from './utils/enums/source-type.enum';
 export function Reader({
   src,
   bookOptions,
+  baseUrl,
   width,
   height,
   defaultTheme = initialTheme,
@@ -139,5 +140,5 @@ export function Reader({
   }
 
   if (!template) throw new Error('Template is not set');
-  return <View template={template} width={width} height={height} {...rest} />;
+  return <View template={template} baseUrl={baseUrl} width={width} height={height} {...rest} />;
 }
