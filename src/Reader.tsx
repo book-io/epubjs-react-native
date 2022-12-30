@@ -125,6 +125,7 @@ export function Reader({
     initialLocations,
     injectBookVariables,
     setIsLoading,
+    bookOptions,
     src,
   ]);
 
