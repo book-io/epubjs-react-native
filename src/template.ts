@@ -33,6 +33,7 @@ export default `
 
       const type = window.type;
       const file = window.book;
+      const bookOptions = window.book_options;
       const theme = window.theme;
       const initialLocations = window.locations;
       const enableSelection = window.enable_selection;
@@ -42,7 +43,7 @@ export default `
       }
 
       if (type === 'epub' || type === 'opf' || type === 'binary') {
-        book = ePub(file);
+        book = ePub(file, bookOptions);
       } else if (type === 'base64') {
         book = ePub(file, { encoding: "base64" });
       } else {

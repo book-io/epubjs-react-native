@@ -12,6 +12,7 @@ import { SourceType } from './utils/enums/source-type.enum';
 // ...
 export function Reader({
   src,
+  bookOptions,
   width,
   height,
   defaultTheme = initialTheme,
@@ -53,6 +54,7 @@ export function Reader({
               injectBookVariables({
                 type: SourceType.BASE64,
                 book: src,
+                bookOptions,
                 theme: defaultTheme,
                 locations: initialLocations,
                 enableSelection: true,
@@ -65,6 +67,7 @@ export function Reader({
               injectBookVariables({
                 type: SourceType.BINARY,
                 book: src,
+                bookOptions,
                 theme: defaultTheme,
                 locations: initialLocations,
                 enableSelection: true,
@@ -87,6 +90,7 @@ export function Reader({
               injectBookVariables({
                 type: sourceType,
                 book: src,
+                bookOptions,
                 theme: defaultTheme,
                 locations: initialLocations,
                 enableSelection: true,
@@ -103,6 +107,7 @@ export function Reader({
               injectBookVariables({
                 type: sourceType,
                 book: bookFile,
+                bookOptions,
                 theme: defaultTheme,
                 locations: initialLocations,
                 enableSelection: true,

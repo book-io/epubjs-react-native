@@ -52,6 +52,15 @@ export type SearchResult = {
   excerpt: string;
 };
 
+export type BookOptions = {
+  requestMethod: () => void,
+  requestCredentials: boolean | null,
+  requestHeaders: { [key: string]: string } | null,
+  encoding: string | null,
+  replacements: string | null,
+  canonical: () => void,
+}
+
 export type LoadingFileProps = {
   fileSize: number;
   downloadProgress: number;
@@ -86,6 +95,7 @@ export interface ReaderProps {
    * @param {object} src
    */
   src: string;
+  bookOptions?: BookOptions,
   /**
    * @param {ePubCfi[]} locations
    * @example
